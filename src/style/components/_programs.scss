@@ -1,0 +1,199 @@
+.programs {
+  padding-top: 75px;
+  padding-bottom: 140px;
+  position: relative;
+  // background-image: url(../img/bg-programs-1.png), url(../img/bg-programs-2.png);
+  background-repeat: no-repeat, no-repeat;
+  background-size: 60px 93px, 60px 131px;
+  background-position: left 210px, right 650px;
+
+  @include breakpoint($xsmall) {
+    background-size: 70px 108px, 60px 131px;
+    background-position: left 200px, right 770px;
+
+  }
+  @include breakpoint($small) {
+    background-size: 90px 139px, 60px 131px;
+    background-position: left 170px, right 880px;
+  }
+  @include breakpoint($medium) {
+    background-size: 90px 139px, 60px 131px;
+    background-position: left 170px, right 530px;
+  }
+  @include breakpoint($large) {
+    background-size: 134px 207px, 106px 231px;
+    background-position: left 150px, right 600px;
+  }
+
+  &:after {
+    @include pseudo;
+    @include breakpoint($xsmall) {
+      right:  0;
+      bottom: -65px;
+      width: 370px;
+      height: 470px;
+      background-image: url(../img/bg-programs.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: 10;
+    }
+    @include breakpoint($medium) {
+      width: 470px;
+      height: 570px;
+    }
+    @include breakpoint($large) {
+      bottom: -165px;
+      width: 739px;
+      height: 940px;
+    }
+  }
+}
+#leftBgBean {
+  background-image: url(../img/bg-programs-1.png);
+  background-repeat: no-repeat;
+  background-size:  134px 207px;
+  background-position: left 150px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+.section-heading--programs {
+  .section-heading__text {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+    @include breakpoint($xsmall) {
+      padding: 0 25px;
+    }
+
+    &:before,
+    &:after {
+      @include pseudo;
+      top: 50%;
+      margin-top: -7px;
+      width: 15px;
+      height: 15px;
+      background-image: url(../img/black-star.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+    &:before {
+      left: -10px;
+    }
+    &:after {
+      right: -10px;
+    }
+  }
+}
+
+.programs__tabs {
+  margin: 0 10px;
+  margin-bottom: 35px;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  font-size: 0;
+  border-bottom: 1px solid $grey;
+}
+.programs__tab {
+  display: inline-block;
+  color: $silver;
+  font-family: $font-secondary;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 2.1;
+  text-transform: uppercase;
+
+  a {
+    display: block;
+    padding: 25px 10px;
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+  }
+  .active {
+    color: $black;
+    &:before {
+      @include pseudo;
+      height: 3px;
+      width: 100%;
+      left: 0;
+      top: 79px;
+      background-color: $black;
+    }
+  }
+}
+
+.programs__content {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.programs__item {
+  display: none;
+}
+.programs__item.visible {
+  display: block;
+  animation: fadeEffect 0.75s;
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@include breakpoint($xsmall) {
+  .programs__tab {
+    font-size: 18px;
+    a {
+      padding: 25px 25px;
+    }
+    .active {
+      &:before {
+        top: 87px;
+      }
+    }
+  }
+}
+
+@include breakpoint($small) {
+  .programs__tab {
+    a {
+      padding: 25px 45px;
+    }
+  }
+}
+
+@include breakpoint($medium) {
+  .programs__tab {
+    font-size: 21px;
+    a {
+      padding: 25px 70px;
+    }
+    .active {
+      &:before {
+        top: 93px;
+      }
+    }
+  }
+}
+
+@include breakpoint($large) {
+  .programs__tab {
+    a {
+      padding: 25px 90px;
+    }
+  }
+}
+
+@include breakpoint($xlarge) {
+  .programs__tab {
+    a {
+      margin: 0 15px;
+    }
+  }
+}

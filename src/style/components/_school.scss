@@ -1,0 +1,34 @@
+.school {
+  padding-bottom: 50px;
+}
+.section-heading--school {
+  margin-bottom: 25px;
+  @include breakpoint($medium) {
+    margin-bottom: 45px;
+  }
+  .section-heading__text {
+    line-height: 1.17;
+    br {
+      display: none;
+      @include breakpoint($medium) {
+        display: inline;
+      }
+    }
+  }
+}
+.school__column {
+  line-height: 1.66;
+
+  @include span(12);
+  @include gutters(20px);
+
+  @include breakpoint($medium) {
+    @include span(6);
+    @include gutters(20px);
+  }
+
+  p {
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+}

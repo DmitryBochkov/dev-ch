@@ -1,0 +1,315 @@
+.program {
+  @include clearfix;
+  position: relative;
+}
+.program__header {
+  position: relative;
+  @include clearfix;
+  padding-top: 10px;
+  margin-bottom: 80px;
+  z-index: 10;
+  @include breakpoint($small) {
+    padding-top: 40px;
+  }
+  @include breakpoint($large) {
+    padding-top: 60px;
+  }
+}
+.program__bg-text {
+  display: none;
+  @include breakpoint($medium) {
+    display: block;
+    position: absolute;
+    color: $light-grey;
+    font-family: $font-secondary;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.65;
+    font-size: 150px;
+    z-index: -1;
+    right: 0;
+    top: 0;
+  }
+  @include breakpoint($large) {
+    font-size: 200px;
+    right: 0;
+  }
+  @include breakpoint($xlarge) {
+    right: 70px;
+  }
+}
+.program__img {
+  position: relative;
+  z-index: inherit;
+  @include span(12);
+  @include gutters(20px);
+
+  @include breakpoint($medium) {
+    @include span(7);
+    @include gutters(20px);
+  }
+
+  img {
+    @include breakpoint($medium) {
+      width: 95%;
+      max-width: 642px;
+    }
+  }
+}
+.program__details {
+  position: relative;
+  z-index: inherit;
+  @include span(12);
+  @include gutters(20px);
+
+  @include breakpoint($medium) {
+    @include span(5);
+    @include gutters(20px);
+  }
+}
+.program__title {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  color: $coal;
+  font-family: $font-primary;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: left;
+  @include breakpoint($medium) {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  @include breakpoint($large) {
+    margin-bottom: 25px;
+  }
+  @include breakpoint($xlarge) {
+    line-height: 1.6666;
+    margin-top: 10px;
+    margin-bottom: 50px;
+  }
+}
+.program__descr {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 16px;
+  line-height: 2.1875;
+  li {
+    position: relative;
+    padding-left: 45px;
+    margin-bottom: 20px;
+    @include breakpoint($medium) {
+      display: inline-block;
+      margin-bottom: 15px;
+      padding-left: 35px;
+      margin-right: 20px;
+    }
+    @include breakpoint($large) {
+      display: list-item;
+      margin-bottom: 20px;
+    }
+    &:before {
+      @include pseudo;
+      left: 0;
+      top: 50%;
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  }
+  li:first-child {
+    &:before {
+      margin-top: -14px;
+      width: 27px;
+      height: 28px;
+      background-image: url(../img/certificate-icon.svg);
+    }
+  }
+  li:last-child {
+    @include breakpoint($xlarge) {
+      margin-bottom: 30px;
+    }
+    &:before {
+      margin-top: -15px;
+      width: 30px;
+      height: 30px;
+      background-image: url(../img/clock-icon.svg);
+    }
+  }
+}
+
+.program__price {
+  margin-bottom: 35px;
+  font-weight: 700;
+  line-height: 0.67;
+  font-size: 58px;
+  @include breakpoint($medium) {
+    margin-bottom: 25px;
+  }
+  @include breakpoint($large) {
+    margin-bottom: 30px;
+  }
+  @include breakpoint($xlarge) {
+    margin-bottom: 35px;
+  }
+  span {
+    font-size: 31px;
+  }
+}
+
+.program__content {
+  @include clearfix;
+}
+.program__item {
+  margin-bottom: 30px;
+}
+.program__item:first-of-type {
+  @include span(12);
+  @include breakpoint($medium) {
+    @include span(34.83333333333333%);
+    @include gutters(20px);
+  }
+}
+.program__item:nth-of-type(2) {
+  @include span(12);
+  @include breakpoint($medium) {
+    @include span(36.83333333333333%);
+    @include gutters(20px);
+  }
+}
+.program__item:last-of-type {
+  @include span(12);
+  @include breakpoint($medium) {
+    @include span(28.33333333333333%);
+    @include gutters(20px);
+  }
+}
+
+.program-item__heading {
+  position: relative;
+  padding-top: 10px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: flex-end;
+  &:before {
+    @include pseudo;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 240px;
+    background-color: #939393;
+    @include breakpoint($medium) {
+      width: 200px;
+    }
+    @include breakpoint($large) {
+      width: 255px;
+    }
+    @include breakpoint($xlarge) {
+      width: 320px;
+    }
+  }
+}
+
+.program-item__title {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.42;
+  text-transform: uppercase;
+  text-align: left;
+
+  br {
+    display: none;
+    @include breakpoint($xlarge) {
+      display: inline;
+    }
+  }
+}
+.program-item__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: $blue-grey;
+  font-size: 16px;
+  line-height: 2.1875;
+
+  li {
+    padding-left: 10px;
+    position: relative;
+    &:before {
+      content: '- ';
+      position: absolute;
+      left: 0;
+
+    }
+  }
+}
+
+.program__features {
+  @include span(12);
+  @include gutters(20px);
+}
+.program-features__heading {
+  margin-bottom: 20px;
+}
+.program-features__title {
+  @extend .program-item__title;
+}
+.program-features__list {
+  margin: 0;
+  padding: 0;
+  width: 693px;
+  list-style: none;
+  color: $blue-grey;
+  font-size: 16px;
+  line-height: 2.5;
+  li {
+    position: relative;
+    padding-left: 65px;
+    border: 1px solid $black;
+    border-top: none;
+    &:first-child {
+      border-top: 1px solid $black;
+    }
+  }
+  .program-features__mark {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    border-right: 1px solid $black;
+  }
+}
+
+.program-features__table {
+  border-collapse: collapse;
+  width: 100%;
+  color: $blue-grey;
+  font-size: 16px;
+  line-height: 1.8;
+  @include breakpoint($medium) {
+    line-height: 2.5;
+    width: 695px;
+  }
+
+  td {
+    border: 1px solid $black;
+    padding: 0;
+    padding-left: 15px;
+    padding-right: 5px;
+  }
+  .program-features__mark {
+    width: 50px;
+    padding-left: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .program-features__mark.yes {
+    background-image: url(../img/yes-mark.svg);
+    background-size: 15px 13px;
+  }
+  .program-features__mark.no {
+    background-image: url(../img/no-mark.svg);
+    background-size: 13px 13px;
+  }
+}

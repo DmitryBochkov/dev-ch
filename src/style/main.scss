@@ -1,0 +1,32 @@
+// libs
+@import "../libs/normalize-css/normalize";
+@import "../libs/susy/sass/susy";
+@import "../libs/breakpoint-sass/stylesheets/breakpoint";
+@import "../libs/slick-carousel/slick/slick.scss";
+
+//base
+@import "mixins";
+@import "style-vars";
+@import "base";
+
+// custom components
+@import "components/navbar";
+@import "components/menu";
+@import "components/header";
+@import "components/hamburger";
+@import "components/page-heading";
+@import "components/programs";
+@import "components/section-heading";
+@import "components/program";
+@import "components/button";
+@import "components/gallery";
+@import "components/section-overlay";
+@import "components/testimonials";
+@import "components/slider-controls";
+@import "components/partners";
+@import "components/questions";
+@import "components/footer";
+@import "components/school";
+@import "components/main-footer";
+@import "components/contacts";
+@import "components/copyright";

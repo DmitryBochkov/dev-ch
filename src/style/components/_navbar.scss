@@ -1,0 +1,167 @@
+.navbar {
+  width: 100%;
+  height: 65px;
+  left: 0;
+  top: 0;
+  position: fixed;
+  color: $white;
+  z-index: 100;
+  .container {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  &:before,
+  &:after {
+    @include pseudo;
+      top: 65px;
+      height: 1px;
+      background-color: rgba($white, 0.25);
+      z-index: 100;
+  }
+  &:before {
+    width: 100%;
+    left: 0;
+  }
+}
+
+.navbar__logo {
+  position: absolute;
+  height: 40px;
+  width: 150px;
+  left: 10px;
+  top: 15px;
+  background: url(../img/short-logo.png) no-repeat;
+  background-size: 100%;
+  transition: 0.25s;
+}
+
+.navbar__phone {
+  display: none;
+  margin-right: 15px;
+  font-family: $font-secondary;
+  font-size: 20px;
+  font-weight: 900;
+  color: inherit;
+  text-decoration: none;
+  &:hover {
+    color: $accent;
+  }
+  span {
+    font-family: $font-primary;
+    font-weight: 400;
+  }
+}
+
+.navbar.is-open,
+.navbar.fixed-nav {
+  background-color: rgba($bg-color-header, 0.95);
+}
+
+
+@include breakpoint($xsmall) {
+  .is-open {
+    .navbar__phone {
+      display: inline-block;
+      font-size: 16px;
+      margin-left: 10px;
+    }
+  }
+}
+
+@include breakpoint($small) {
+  .navbar__phone {
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-right: 5px;
+  }
+}
+
+@include breakpoint($medium) {
+  .navbar {
+    height: 100px;
+    &:before,
+    &:after {
+      @include pseudo;
+        top: 100px;
+    }
+  }
+
+  .navbar__logo {
+    top: 30px;
+  }
+}
+
+@include breakpoint($large) {
+  .navbar {
+    &:before {
+      width: 10px;
+    }
+    &:after {
+      left: 265px;
+      width: 100%;
+    }
+  }
+
+  .navbar__logo {
+    height: 149px;
+    width: 229px;
+    left: 20px;
+    top: 20px;
+    background-image: url(../img/logo.png);
+  }
+
+  .navbar.fixed-nav {
+    &:before {
+      width: 100%;
+      left: 0;
+    }
+    &:after {
+      display: none;
+    }
+    .navbar__logo {
+      height: 40px;
+      width: 150px;
+      top: 30px;
+      background-image: url(../img/short-logo.png);
+    }
+  }
+}
+
+@include breakpoint($xlarge) {
+  .navbar {
+    &:before {
+      width: 55px;
+    }
+    &:after {
+      left: 315px;
+    }
+  }
+
+  .navbar__logo {
+    left: 70px;
+  }
+
+  .navbar__phone {
+    font-size: 20px;
+  }
+}
+
+
+@include breakpoint(1650px) {
+  .navbar {
+    .container {
+      position: initial;
+    }
+  }
+
+  .navbar__phone {
+    margin-right: 0;
+    font-size: 27px;
+    position: absolute;
+    top: 25px;
+    right: 40px;
+  }
+}

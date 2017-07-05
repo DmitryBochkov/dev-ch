@@ -1,0 +1,183 @@
+.gallery {
+  padding: 70px 0;
+  position: relative;
+  width: 100%;
+  min-height: 820px;
+  background-color: #222121;
+  background-image: url(../img/bg-gallery.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  @include breakpoint($xsmall) {
+    padding: 100px 0;
+  }
+  @include breakpoint($small) {
+    padding: 141px 0;
+    height: 1163px;
+  }
+
+  .container {
+    position: relative;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  &:before,
+  &:after {
+    @include pseudo;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-image: url(../img/decor-border.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 10;
+    @include breakpoint($xsmall) {
+      height: 100px;
+    }
+    @include breakpoint($small) {
+      height: 141px;
+    }
+  }
+  &:before {
+    top: -5px;
+    transform: rotate(180deg);
+  }
+  &:after {
+    bottom: -5px;
+  }
+}
+
+.section-heading---gallery {
+  color: $white;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  @include breakpoint($xsmall) {
+    width: 405px;
+  }
+  .section-heading__text {
+    width: 100%;
+  }
+  .section-heading__subtext {
+    color: inherit;
+  }
+  .section-heading__decor-lines {
+    background-color: $white;
+  }
+}
+
+.gallery__items {
+  margin-bottom: 20px;
+  @include breakpoint($small) {
+    margin-bottom: 50px;
+  }
+}
+.gallery__item {
+  margin: 0 20px;
+}
+
+.gallery__controls {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include breakpoint($xsmall) {
+    width: 455px;
+  }
+  .prev,
+  .next {
+    position: relative;
+    display: inline-block;
+    width: 68px;
+    height: 68px;
+    padding: 0;
+    border: 1px solid $accent;
+    background-color: transparent;
+    color: transparent;
+    font-style: 0;
+    cursor: pointer;
+    outline: none;
+    &:hover {
+      &:after {
+        background-color: $accent;
+      }
+      &:before {
+        border-color: $accent;
+      }
+    }
+    &:before,
+    &:after {
+      @include pseudo;
+    }
+  }
+  .prev,
+  .next {
+    &:before {
+      border: solid $white;
+      border-width: 0 1px 1px 0;
+      padding: 8px;
+      top: 50%;
+      margin-top: -8px;
+    }
+  }
+  .prev {
+    &:before {
+      transform: rotate(135deg);
+      left: 50%;
+      margin-left: -4px;
+    }
+  }
+  .next {
+    &:before {
+      transform: rotate(-45deg);
+      right: 50%;
+      margin-right: -4px;
+    }
+  }
+  .prev,
+  .next {
+    &:after {
+      @include breakpoint($xsmall) {
+        background-color: $white;
+        width: 108px;
+        height: 1px;
+        top: 50%;
+      }
+    }
+  }
+  .prev {
+    &:after {
+      left: 50%;
+      margin-left: -5px;
+    }
+  }
+  .next {
+    &:after {
+      right: 50%;
+      margin-right: -5px;
+    }
+  }
+}
+
+.gallery__counter {
+  font-size: 16px;
+  color: $accent;
+  line-height: 33px;
+  @include breakpoint($xsmall) {
+    font-size: 19px;
+  }
+  span {
+    display: inline-block;
+    width: 20px;
+    margin: 0 5px;
+    color: $white;
+    font-size: 24px;
+    text-align: center;
+    @include breakpoint($xsmall) {
+      width: 25px;
+      font-size: 30px;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+$susy: (
+  columns: 12,
+  math: fluid,
+  output: float,
+  gutter-position: inside,
+);
+
+$xsmall: 'screen' 480px;
+$small: 'screen' 600px;
+$medium: 'screen' 768px;
+$large: 'screen' 992px;
+$xlarge: 'screen' 1200px;
+
+$font-primary: 'Georgia', 'Times', 'Times New Roman', serif;
+$font-secondary: 'Roboto', sans-serif;
+
+$accent: #eab96a;
+$dark: #222;
+$white: #fff;
+$black: #000;
+$coal: #2b2b2b;
+$blue-grey: #485260;
+$silver: #adadad;
+$grey: #c6c6c6;
+$light-grey: #ddd;
+$lime: #6a9c00;
+$red: #c20000;
+$gold: #a79365;
+$blue-fb: #4267b2;
+$bg-color: #eee;
+$bg-color-header: #161414;
+$bg-color-footer: #352c23;
+$border-color-contacts: #4d4d4d;

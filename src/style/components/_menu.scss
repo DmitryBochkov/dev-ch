@@ -1,0 +1,147 @@
+.menu {
+  display: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 12px;
+  line-height: 3.5;
+  font-family: $font-secondary;
+  font-weight: 900;
+  color: $white;
+  z-index: 10;
+}
+.menu__item {
+  position: relative;
+  margin: 0 20px;
+  text-transform: uppercase;
+  &:after {
+    @include pseudo;
+    width: 4px;
+    height: 4px;
+    right: -15px;
+    top: 50%;
+    margin-top: -2px;
+    border-radius: 50%;
+    background-color: $white;
+  }
+}
+.menu__item:last-child {
+  &:after {
+    display: none;
+  }
+}
+.menu__link {
+  display: block;
+  position: relative;
+  padding: 10px 15px;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s ease;
+
+  &.active {
+    color: $accent;
+  }
+  &:before {
+    @include pseudo;
+    height: 3px;
+    width: 100%;
+    left: 0;
+    top: 80px;
+    background-color: transparent;
+    transition: all 0.5s ease;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    color: $accent;
+    &:before {
+      background-color: $accent;
+    }
+  }
+}
+
+.is-open {
+  .menu {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: auto;
+    top: 65px;
+    left: 0;
+    background-color: rgba($bg-color-header, 0.95);
+  }
+  .menu__item {
+    &:after {
+      display: none;
+    }
+  }
+  .menu__link {
+    &:before {
+      top: 45px;
+    }
+  }
+}
+
+.fixed-nav {
+  .menu {
+    background-color: rgba($bg-color-header, 0.95);
+  }
+}
+
+@include breakpoint($medium) {
+  .menu {
+    position: initial;
+    display: flex;
+  }
+  .menu__item {
+    margin: 0;
+    &:after {
+      display: none;
+    }
+  }
+  .menu__link {
+    padding: 0 12px;
+    &:before {
+      top: 70px;
+    }
+  }
+
+  .fixed-nav {
+    .menu {
+      background-color: transparent;
+    }
+    .menu__link {
+      &:before {
+        top: 68px;
+      }
+    }
+  }
+}
+
+
+@include breakpoint($large) {
+  .menu__item {
+    margin: 0 10px;
+    &:after {
+      display: block;
+    }
+  }
+  .menu__link {
+    padding: 0 15px;
+  }
+  .fixed-nav {
+
+  }
+}
+
+@include breakpoint(1650px) {
+  .menu {
+    margin-right: 30px;
+  }
+  .menu__item {
+    margin: 0 20px;
+  }
+}

@@ -1,0 +1,79 @@
+.prev-btn,
+.next-btn {
+  padding: 0;
+  position: absolute;
+  width: 40px;
+  height: 50px;
+  font-size: 0;
+  background-color: transparent;
+  color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  top: 50%;
+  margin-top: -25px;
+
+  &:before {
+    @include pseudo;
+    border: solid $blue-grey;
+    border-width: 0 2px 2px 0;
+    padding: 6px;
+    top: 50%;
+    margin-top: -6px;
+  }
+}
+
+.prev-btn {
+  left: 0;
+  @include breakpoint($xsmall) {
+    left: 5px;
+  }
+  &:before {
+    left: 5px;
+    transform: rotate(135deg);
+  }
+}
+
+.next-btn {
+  right: 0;
+  @include breakpoint($xsmall) {
+    right: 5px;
+  }
+  &:before {
+    right: 5px;
+    transform: rotate(-45deg);
+  }
+}
+
+.slick-dots {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  font-size: 0;
+  @include breakpoint($xsmall) {
+    width: 250px;
+    margin: 0 auto;
+  }
+
+  li {
+    margin: 0 10px;
+  }
+  li.slick-active {
+    button {
+      background-color: $accent;
+    }
+  }
+  button {
+    color: transparent;
+    border: none;
+    outline: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: $black;
+    cursor: pointer;
+  }
+}

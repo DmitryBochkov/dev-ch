@@ -1,0 +1,48 @@
+.copyright {
+  line-height: 27px;
+  color: $white;
+  padding-bottom: 15px;
+}
+.copyright__main,
+.copyright__template {
+  @include span(12);
+
+  @include breakpoint($small) {
+    @include span(6);
+    @include gutters(40px);
+  }
+}
+
+.copyright__main {
+  text-align: center;
+  @include breakpoint($small) {
+    border-right: 1px solid $white;
+    p {
+      margin: 0;
+      text-align: right;
+    }
+
+  }
+}
+.copyright__template {
+  font-size: 12px;
+  font-family: $font-secondary;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  @include breakpoint($small) {
+    p {
+      margin: 0;
+      text-align: left;
+    }
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    transition: 0.25s;
+    &:hover {
+      color: $accent;
+    }
+  }
+}

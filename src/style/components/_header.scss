@@ -1,0 +1,56 @@
+.top-header {
+  position: relative;
+  width: 100%;
+  height: 800px;
+  padding-top: 65px;
+  background-color: $bg-color-header;
+  background-image: url(../img/bg-header.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: $white;
+  @include breakpoint($medium) {
+    padding-top: 100px;
+  }
+  &:before {
+    @include pseudo;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 57px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../img/decor-border.png);
+    @include breakpoint($small) {
+      height: 85px;
+    }
+    @include breakpoint($large) {
+      height: 95px;
+    }
+    @include breakpoint($xlarge) {
+      height: 141px;
+    }
+  }
+  &:after {
+    @include pseudo;
+    right: 0;
+    bottom: -50px;
+    width: 120px;
+    height: 124px;
+    background-repeat: no-repeat;
+    background-size: 120px 124px;
+    background-image: url(../img/bg-header-1.png);
+
+    @include breakpoint($small) {
+      width: 170px;
+      height: 175px;
+      background-size: 170px 175px;
+    }
+    @include breakpoint($medium) {
+      bottom: -70px;
+      width: 238px;
+      height: 245px;
+      background-size: 238px 245px;
+    }
+  }
+}

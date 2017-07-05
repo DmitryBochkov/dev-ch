@@ -1,0 +1,66 @@
+.section-heading {
+  margin-bottom: 65px;
+  text-align: center;
+}
+.section-heading__text {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 15px;
+  font-size: 30px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  @include breakpoint($xsmall) {
+    font-size: 40px;
+  }
+  @include breakpoint($small) {
+    font-size: 45px;
+    letter-spacing: 3px;
+  }
+  @include breakpoint($medium) {
+    letter-spacing: 5px;
+    font-size: 50px;
+  }
+}
+
+.section-heading__subtext {
+  color: $blue-grey;
+  font-size: 16px;
+}
+
+.section-heading__decor-lines {
+  position: absolute;
+  width: 31px;
+  height: 3px;
+  background-color: $black;
+  top: 50%;
+  margin-top: -1px;
+
+  &:before,
+  &:after {
+    @include pseudo;
+    width: 21px;
+    height: 3px;
+    background-color: inherit;
+  }
+  &:before {
+    top: -6px;
+  }
+  &:after {
+    top: 6px;
+  }
+}
+.section-heading__decor-lines--left {
+  left: 0;
+  &:before,
+  &:after {
+    right: 0;
+  }
+}
+.section-heading__decor-lines--right {
+  right: 0;
+  &:before,
+  &:after {
+    left: 0;
+  }
+}

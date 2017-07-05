@@ -1,0 +1,143 @@
+.page-heading {
+  padding-top: 110px;
+  color: inherit;
+}
+.page-heading__stars {
+  text-align: center;
+  font-size: 0;
+  margin-bottom: 10px;
+}
+.page-heading__star {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin: 5px 11px;
+  background-image: url(../img/golden-star.png);
+  background-repeat: no-repeat;
+}
+
+.page-heading__descr {
+  position: relative;
+  margin-bottom: 25px;
+  font-size: 16px;
+  line-height: 2.86;
+  text-align: center;
+  @include breakpoint($xsmall) {
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    &:before,
+    &:after {
+      @include pseudo;
+      top: 50%;
+      margin-top: -3px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
+    &:before {
+      left: -70px;
+      border-width: 3px 70px 3px 0;
+      border-color: transparent $gold transparent transparent;
+    }
+    &:after {
+      right: -70px;
+      border-width: 3px 0 3px 70px;
+      border-color: transparent transparent transparent $gold;
+    }
+  }
+  @include breakpoint($small) {
+    width: 370px;
+    font-size: 18px;
+    &:before {
+      left: -101px;
+      border-width: 3px 101px 3px 0;
+    }
+    &:after {
+      right: -101px;
+      border-width: 3px 0 3px 101px;
+    }
+  }
+  @include breakpoint($medium) {
+    width: 440px;
+  }
+}
+
+.page-heading__text {
+  margin-top: 25px;
+  margin-bottom: 45px;
+  font-size: 40px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  span {
+    color: $accent;
+  }
+  @include breakpoint($small) {
+    font-size: 57px;
+  }
+  @include breakpoint($medium) {
+    font-size: 67px;
+    line-height: 0.87;
+  }
+}
+.page-heading__subtext {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.7;
+  @include breakpoint($small) {
+    font-size: 21px;
+    line-height: 2.38;
+  }
+}
+
+.page-heading__divider {
+  position: relative;
+  width: 6px;
+  height: 6px;
+  margin: 0 auto;
+  margin-bottom: 70px;
+  background-color: $gold;
+  border-radius: 50%;
+  &:before,
+  &:after {
+    @include pseudo;
+    top: 50%;
+    margin-top: -2px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+  &:before {
+    left: -66px;
+    border-width: 2px 62px 2px 0;
+    border-color: transparent $gold transparent transparent;
+  }
+  &:after {
+    right: -66px;
+    border-width: 2px 0 2px 62px;
+    border-color: transparent transparent transparent $gold;
+  }
+}
+
+.page-heading__link {
+  display: flex;
+  margin: 0 auto;
+  width: 61px;
+  height: 61px;
+  border: 1px solid $white;
+  border-radius: 50%;
+  transition: border-color 0.25s ease-in;
+  .arrow-down {
+    display: block;
+    margin: auto;
+    width: 12px;
+    height: 7px;
+    background-image: url(../img/arrow-down.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+}
+.page-heading__link:hover {
+  border-color: $accent;
+}

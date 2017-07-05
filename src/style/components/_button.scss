@@ -1,0 +1,29 @@
+.btn {
+  position: relative;
+  display: inline-block;
+  background-color: $black;
+  color: $white;
+  font-family: $font-secondary;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1.79;
+  text-transform: uppercase;
+  text-align: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s;
+}
+.btn:hover,
+.btn:focus,
+.btn:active {
+  background-color: $coal;
+}
+.btn:active {
+  color: $silver;
+}
+
+.btn--register {
+  width: 244px;
+  height: 57px;
+}
